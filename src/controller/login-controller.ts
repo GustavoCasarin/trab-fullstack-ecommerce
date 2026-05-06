@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { LoginService } from "../service/login-service";
 
+//teste
+
 export class LoginController {
     private service: LoginService;
 
