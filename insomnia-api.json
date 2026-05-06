@@ -1,0 +1,90 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-01-01T00:00:00.000Z",
+  "__export_source": "chatgpt",
+  "resources": [
+    {
+      "_id": "req_login",
+      "_type": "request",
+      "name": "Login",
+      "method": "POST",
+      "url": "http://localhost:3000/api/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"admin@email.com\",\n  \"senha\": \"123456\"\n}"
+      }
+    },
+    {
+      "_id": "req_create_user",
+      "_type": "request",
+      "name": "Criar Usuario",
+      "method": "POST",
+      "url": "http://localhost:3000/api/usuarios",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"admin@email.com\",\n  \"senha\": \"123456\"\n}"
+      }
+    },
+    {
+      "_id": "req_produto_create",
+      "_type": "request",
+      "name": "Criar Produto",
+      "method": "POST",
+      "url": "http://localhost:3000/api/produtos",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Mouse Gamer\",\n  \"preco\": 150,\n  \"categoria\": { \"id\": 1 }\n}"
+      }
+    },
+    {
+      "_id": "req_produto_get",
+      "_type": "request",
+      "name": "Listar Produtos",
+      "method": "GET",
+      "url": "http://localhost:3000/api/produtos",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_pedido_create",
+      "_type": "request",
+      "name": "Criar Pedido",
+      "method": "POST",
+      "url": "http://localhost:3000/api/pedidos",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"cliente\": { \"id\": 1 },\n  \"listaProdutos\": [\n    { \"id\": 1 },\n    { \"id\": 2 }\n  ]\n}"
+      }
+    },
+    {
+      "_id": "req_pedido_get",
+      "_type": "request",
+      "name": "Listar Pedidos",
+      "method": "GET",
+      "url": "http://localhost:3000/api/pedidos",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    }
+  ]
+}
